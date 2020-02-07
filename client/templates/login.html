@@ -1,0 +1,49 @@
+<template name = "login">
+  <div class="headSpacer">
+
+    <br/>
+    {{apiTest}}
+  </div>
+  <div class="inputBox1 donnytron">
+    <div class="inner loginCopy">
+      <div class=" splashBox2  donnytron">
+        <div class="mainText lightbox8 donnytron">
+      <span > <h1>create a player name</h1></span>
+      <span> <h3>Just add your name and then hit <strong>start </strong>to begin</h3></span>
+    </div>
+  </div>
+  <div class=" splashBox3  donnytron">
+    <div class="mainText lightbox1 donnytron">
+      {{> selectForm}}
+  </div>
+  </div>
+
+  </div>
+</div>
+
+</template>
+
+<template name="createNew">
+  <form class="playerName" action="/login" >
+    <input id="newPlayer" type="text" name="strings" value="" placeHolder="add your name here" class="form-control form-pt0">
+    <input  type="submit" value="Start" class="sButton cubeButton donnytron "/>
+  </form>
+</template>
+
+<template name="destroyOld">
+  <div class="">
+    Are you sure you want to kill this player
+    </div>
+  <form class="playerName" action="/login" >
+
+    <input  type="submit" value="Kill" class="sButton cubeButton donnytron "/>
+  </form>
+
+  <div class="">
+    <a href="/policies"> or do you want to continue with the current options</a>
+    </div>
+  <!-- <form class="keepPlayer" action="/login" >
+
+    <input  type="submit" value="keep" class="sButton cubeButton donnytron "/>
+  </form> -->
+</template>

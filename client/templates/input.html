@@ -1,0 +1,69 @@
+<template name = "input">
+
+<div class="inputCont">
+  <div class="headSpacer">
+  </div>
+
+<div class="inputBox2">
+  <div class="unitSwitchBox">
+
+    <div class=" toggle unitM">
+      <div class="labelM">
+        <span class="redTape">
+          Metric
+        </span>
+      </div>
+    </div>
+
+    <div class="toggle unitToggle redTape">
+      <input type="radio" id="system1" name="system" value="metric">
+      <label for="contactChoice1">metric</label>
+      <input type="radio" id="system2" name="system" value="imperial">
+      <label for="contactChoice1">imperial</label>
+    </div>
+
+    <div class="toggle unitI">
+      <div class="labelM">
+        <span class="redTape ">
+          Imperial
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+<div class=" dynamicForm">
+{{> UI.dynamic template=currentSystem }}
+</div>
+</div>
+</div>
+
+</template>
+<template name ="metricInput">
+<form class="metric-input" action="/draw" >
+     <input  name="meters" id="mIn" type="text" value="" placeholder="meters " class="form-control form-pt1"/>
+     <input  name="centemeters" id="cmIn" type="text" value="" placeholder="centemeter" class="form-control form-pt2"/>
+     <input  type="submit" value="Submit" class="metric-input btn btn-primary"/>
+
+</form>
+</template>
+
+<template name="generalInput">
+  <form class="general-input" action="/draw"  >
+    <input  name="{{mainUnitName}}" id="{{mainUnitId}}" type="text" value="" placeholder="{{mainUnitPlaceholder}} " class="form-control form-pt1"/>
+    <input  name="{{secondUnitName}}" id="{{secondUnitId}}" type="text" value="" placeholder="{{seconsUnitPlaceholder}}" class="form-control form-pt2"/>
+    <input  type="submit" value="Submit" class="general-input btn btn-primary"/>
+  </form>
+</template>
+
+<template name="imperialInput">
+  <form class="imperial-input" action="/draw"  >
+    <input  name="feet" id="ftIn" type="text" value="" placeholder="feet " class="form-control form-pt1"/>
+    <input  name="inches" id="inIn" type="text" value="" placeholder="inches" class="form-control form-pt2"/>
+    <input  type="submit" value="Submit" class="imperial-input btn btn-primary"/>
+  </form>
+</template>
+<template name="noInput">
+
+  <div> hello there</div>
+</template>

@@ -1,0 +1,72 @@
+<template name = "policies">
+
+
+  <div class="policyCont">
+    <div class = "headSpacer">
+    </div>
+    <div class=" splashBox2  donnytron">
+      <div class="mainText lightbox2 donnytron">
+
+
+      <h3> <span class="transparentLabel">Your areas of influence </span> </h3>
+    <span class="smallcopy transparentLabel">  You have been given this small set to focus on</span> <br/>
+
+
+    <span class="smallcopy transparentLabel">  Each item will appears as a white circle in the main visualisation</span><br/>
+    <span class="smallcopy transparentLabel">  You can add funds to them by using the sliders</span><br/>
+    <span class="smallcopy transparentLabel">  if you dont like this set, kill the player and make a new one</span>
+
+    <!-- <p><span class="smallcopy transparentLabel">  When it has enough funding to work, the ciercle will turn solid white.</span></p> -->
+
+    </div>
+  </div>
+  <div class=" splashBox2  donnytron">
+    <div class="mainText lightbox8 donnytron">
+      <div class = "policyList polSpace">
+        <div class = "sliderCopy polList">
+
+        <ul>
+          {{#each policy}}
+            {{>pol}}
+            <!-- {{setVals}} -->
+          {{/each}}
+        </ul>
+    </div>
+    </div>
+    <div class=" splashBox3  donnytron">
+<div class="mainText lightbox2 donnytron">
+        <!-- {{>joinTableBut}} -->
+        <p>
+          <a href="/login">Kill this player</a>
+          </p>
+      </div>
+      </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+</template>
+
+<template name="pol">
+  <div class ="polwrap polList">
+  <li>{{name}}</li>
+
+  <fieldset>
+    <label for="volume">Funding level</label>
+    <!-- <input type="range" id="start" name="volume" min="0" max="11" /> -->
+    <input id="{{id}}" type="range" min="0" max="{{maxFund}}" value="0" step="{{slideStep}}"  onchange="{{setFund}}"/>
+     <!-- onchange="showValue(this.value); changeScrollBar(this.value);" -->
+     {{setVals thisid}}
+  </fieldset>
+</div>
+</template>
+
+<template name = "joinTableBut">
+  <form class="joinScr" action="/login" >
+  <input  type="submit" value="join screen" class="tButton sButton cubeButton donnytron "/>
+</form>
+</template>
