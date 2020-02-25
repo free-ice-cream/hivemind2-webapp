@@ -2,18 +2,18 @@
 
 
   <div class="policyCont">
-    <div class = "headSpacer">
-    </div>
-    <div class=" splashBox2  donnytron">
-      <div class="mainText lightbox2 donnytron">
-        <h3> <span class="transparentLabel">Hello: {{whoami}}</span> </h3>
-      <h3> <span class="transparentLabel">Your Target is: {{whatGoal}}</span> </h3>
-      <h3> <span class="transparentLabel">Your areas of influence are below </span> </h3>
-    <span class="smallcopy transparentLabel">  Try to achive your target by adding funds  </span> <br/>
+    <!-- <div class = "headSpacer">
+    </div> -->
+    <div class=" splashBox2  donnytron ">
+      <div class="mainText lightbox2 donnytron lightspace">
+        <h3 > <span class="transparentLabel donnytron">Hello: {{whoami}}</span> </h3>
+      <h3> <span class="transparentLabel donnytron">Your Target is: {{whatGoal}}</span> </h3>
+      <h3> <span class="transparentLabel donnytron">Your areas of influence are below </span> </h3>
+    <span class="smallcopy transparentLabel donnytron">  Try to achive your target by adding funds  </span> <br/>
 
 
-    <span class="smallcopy transparentLabel">  Check the main visualisation to see what impact these have</span><br/>
-    <span class="smallcopy transparentLabel">  You can add funds to them by using the sliders</span><br/>
+    <span class="smallcopy transparentLabel donnytron">  Check the main visualisation to see what impact these have</span><br/>
+    <span class="smallcopy transparentLabel donnytron">  You can add funds to them by using the sliders</span><br/>
     <!-- <span class="smallcopy transparentLabel">  if you dont like this set, kill the player and make a new one</span> -->
 
     <!-- <p><span class="smallcopy transparentLabel">  When it has enough funding to work, the ciercle will turn solid white.</span></p> -->
@@ -37,7 +37,7 @@
 <div class="mainText lightbox2 donnytron">
         <!-- {{>joinTableBut}} -->
         <p>
-          <a href="/login">Kill this player {{whoami}}</a>
+          <a class = "killer" href="/login">Kill this player {{whoami}}</a>
           </p>
       </div>
       </div>
@@ -59,6 +59,7 @@
     <label for="volume">Funding level</label>
     <!-- <input type="range" id="start" name="volume" min="0" max="11" /> -->
     <input id="{{id}}" type="range" min="0" max="{{maxFund}}" value="0" step="{{slideStep}}"  onchange="{{setFund}}"/>
+      <!-- <input id="{{id}}" type="range" min="0" max="{{maxFund}}" value="0" step="10"  onchange="{{setFund}}"/> -->
      <!-- onchange="showValue(this.value); changeScrollBar(this.value);" -->
      {{setVals thisid}}
   </fieldset>

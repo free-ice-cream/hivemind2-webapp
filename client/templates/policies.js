@@ -67,7 +67,7 @@ Template.pol.helpers({
     var gd=GameData.findOne();
     var gameData = GameData.findOne({_id: gd._id});
     var maxSpend=gameData.max_spend_per_tick;
-    console.log("maxSpend = "+maxSpend);
+    console.log(" ########## maxSpend = "+maxSpend);
 
     return maxSpend;
   },
@@ -96,6 +96,8 @@ Template.pol.helpers({
     // console.log("!!slider level = "+this.id +" value ="+sliderLevels[this.id]);//
     // console.log("sliderLevels.length= "+sliderLevels.length);
     this.value=0;
+  }, zeroStart: function(){
+    setVals
   }
 
 
