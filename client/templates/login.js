@@ -87,8 +87,9 @@ var newPlayer={'name': s};
              // console.log("player._id= "+player._id);
              Player.update(player._id, {$set :{balance: data.balance}});
              Player.update(player._id, {$set :{unclaimedBudget: data.unclaied_budget}});
-             Player.update(player._id, {$set : {goal: data.Goal}});
-             console.log("player  token= "+data.token);
+             Player.update(player._id, {$set : {goal: data.goal}});
+             console.log("#£# player  token= "+data.token);
+             console.log("at creation we set the goal as: ", data.goal);
              Player.update(player._id, {$set : {token: data.token}});
              Player.update(player._id, {$set : {playerId: data.id}});
              Player.update(player._id, {$set : {playerId2: data.id}});
@@ -96,6 +97,7 @@ var newPlayer={'name': s};
              for(var i=0; i<data.policies.length;i++) {
                Policies.insert( data.policies[i] )
              }
+             console.log("Player set as: ",player);
              getGameData();
               // claimBudget();
              Router.go("/policies");
@@ -197,9 +199,9 @@ Template.createNew.helpers({
 });
 Template.destroyOld.helpers({
   whoami: function(){
-    
+
     let pn = Player.findOne({playerName: strings});
-    console.log("collections says"+pn.playerName );
+    console.log("collections says, "+pn.playerName );
     return pn.playerName;
   }
 

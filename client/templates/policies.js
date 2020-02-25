@@ -29,20 +29,31 @@ Template.policies.helpers({
     return policies;
     //return Policies.find({}, { sort: { createdAt: -1 } });
 
-},
-setVals: function(){
-  // console.log(" magic id= "+this.id);
-  // console.log("magic value = "+this.value);
-//  var foo = this.id;
-  sliderLevels.push(0);
-  sliderIds.push(this.id);
-  // console.log("!!slider level = "+this.id +" value ="+sliderLevels[this.id]);//
-  // console.log("sliderLevels.length= "+sliderLevels.length);
-  // this.value=0;
-},
-kill: function(){
-  Router.go("/login");
-}
+  },
+  setVals: function(){
+    // console.log(" magic id= "+this.id);
+    // console.log("magic value = "+this.value);
+  //  var foo = this.id;
+    sliderLevels.push(0);
+    sliderIds.push(this.id);
+    // console.log("!!slider level = "+this.id +" value ="+sliderLevels[this.id]);//
+    // console.log("sliderLevels.length= "+sliderLevels.length);
+    // this.value=0;
+  },
+  kill: function(){
+    Router.go("/login");
+  },
+  whatGoal: function(){
+  var pl=Player.findOne();
+
+    return pl.goal.name;
+  },
+  whoami: function(){
+  var pl=Player.findOne();
+
+    return pl.playerName;
+  }
+
 
 });
 Template.pol.helpers({
@@ -86,6 +97,7 @@ Template.pol.helpers({
     // console.log("sliderLevels.length= "+sliderLevels.length);
     this.value=0;
   }
+
 
   //  var input = document.getElementById("mySlider");
   //  input.value = localStorage.getItem("foo2");
